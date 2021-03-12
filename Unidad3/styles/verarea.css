@@ -18,7 +18,7 @@
 }
 
 .card {
-    height: 500px;
+    height: 470px;
     border-radius: 30px;
     background-color: rgba(54, 54, 50, 0.849);
 }
@@ -46,7 +46,7 @@
 }
 
 #btnAlta {
-    background-color: rgba(196, 6, 6, 0.959);
+    background-color: rgba(44, 196, 6, 0.89);
     margin-left: 10px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .agrupacion {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #btnAdd {

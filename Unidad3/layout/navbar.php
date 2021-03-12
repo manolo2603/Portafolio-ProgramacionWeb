@@ -4,7 +4,7 @@
       <div class="circulo">
         <img src="../Database/obtenerImagen.php?IdProducto=<?php echo $imagenUsuario->idUsuario ?>" class="imagen">
       </div>
-      <a class="navbar-brand" href="#"><?php echo $_SESSION['NombreUsuario'] ?></a>
+      <a class="navbar-brand" href="../pages/control.php"><?php echo $_SESSION['NombreUsuario'] ?></a>
       
     </div>
 

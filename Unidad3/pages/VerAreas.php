@@ -48,7 +48,7 @@ if (!isset($_SESSION['NombreUsuario'])) {
                // echo "".$Noareas->noarea;
                 
                 for($i=1;$i<=$Noareas->noarea;$i++){
-                    $sql = "select a.NombreArea, a.Especialista, a.Piso, a.Habitacion, count(p.idArea) as actCount from area as a inner join paciente as p on p.idArea=a.idArea where P.idArea=".$i;
+                    $sql = "select a.NombreArea, a.urlImagen, a.Especialista, a.Piso, a.Habitacion, count(p.idArea) as actCount from area as a inner join paciente as p on p.idArea=a.idArea where P.idArea=".$i;
                     $resultado = $cn->query($sql);
                     $areas = $resultado->fetchAll(PDO::FETCH_OBJ);
                 foreach ($areas as $area) {
@@ -56,7 +56,7 @@ if (!isset($_SESSION['NombreUsuario'])) {
                     echo "<div class='card'>";
                     echo "<div class='card-body'>";
                     echo "<h5 class='card-title'>" . $area->NombreArea . "</h5>";
-                    echo "<img src='../hospital.png' class='card-img-top' alt='...'>";
+                    echo "<img src='../Database/" . $area->urlImagen . "'class='card-img-top' alt='...'>";
                     echo "<div class='agrupacion'>";
                     echo "<div class='d-flex flex-nowrap'>";
                     echo "<p id='propiedades'>Doctor encargado:</p><p class='card-text'>" . $area->Especialista ."</p>";
@@ -65,11 +65,12 @@ if (!isset($_SESSION['NombreUsuario'])) {
                     echo "<p id='propiedades'>Número de pacientes: </p><p class='card-text'>" . $area->actCount . "</p>";
                     echo "</div>";
                     echo "<div class='d-flex flex-nowrap'>";
-                    echo "<p id='propiedades'>Numero de piso: </p><p class='card-text'>" . $area->Piso . "</p>";
+                    echo "<p id='propiedades'>Número de piso: </p><p class='card-text'>" . $area->Piso . "</p>";
                     echo "</div>";
                     echo "<div class='d-flex flex-nowrap'>";
-                    echo "<p id='propiedades'>Numero Habitación: </p><p class='card-text'>" . $area->Habitacion . "</p>";
+                    echo "<p id='propiedades'>Número Habitación: </p><p class='card-text'>" . $area->Habitacion . "</p>";
                     echo "</div>";
+                    echo "<a href='verPacientes.php?Consulta=".$i."' class='btn' id='btnAlta'><i class='far fa-eye'></i>Ver Pacientes</a>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
